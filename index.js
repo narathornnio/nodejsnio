@@ -25,6 +25,11 @@ io.on('connection', (socket) => {
 });
  
 var port = process.env.PORT || 3001;
+app.get('/', (req, res) => {
+  res.json({
+    message: 'OK'
+  })
+})
  
 server.listen(port, function(){
    console.log('listening in http://localhost:' + port);
