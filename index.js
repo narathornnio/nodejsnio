@@ -16,6 +16,7 @@ io.on('connection', (socket) => {
   socket.on('send-message', (message) => {
     io.emit('message', {
         msg: message.text, 
+        img: message.img,
         user: socket.username, 
         owner_room: message.owner_room,
         chat_partner: message.chat_partner,
