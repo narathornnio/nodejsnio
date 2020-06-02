@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
         user: socket.username, 
         owner_room: message.owner_room,
         chat_partner: message.chat_partner,
+        coderoom: Number(message.owner_room)+Number(message.chat_partner),
         createdAt: new Date()
       });    
   });
