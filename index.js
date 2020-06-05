@@ -21,6 +21,7 @@ io.on('connection', (socket) => {
         owner_room: message.owner_room,
         chat_partner: message.chat_partner,
         coderoom: Number(message.owner_room)+Number(message.chat_partner),
+        coderoomgroup:message.
         name_thai: message.name_thai,
         createdAt: new Date()
       });    
