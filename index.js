@@ -23,6 +23,7 @@ io.on('connection', (socket) => {
         coderoom: Number(message.owner_room)+Number(message.chat_partner),
         coderoomgroup:message.coderoomgroup,
         name_thai: message.name_thai,
+        img_send: message.img_send,
         createdAt: new Date()
       });    
   });
