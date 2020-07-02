@@ -24,6 +24,7 @@ io.on('connection', (socket) => {
         coderoomgroup:message.coderoomgroup,
         name_thai: message.name_thai,
         img_send: message.img_send,
+        img_send_name: message.img_send_name,
         createdAt: new Date()
       });    
   });
