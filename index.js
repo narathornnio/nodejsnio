@@ -4,12 +4,15 @@ let app = require('express')();
 
 let server = require('http').createServer(app);
 
-
-
+const WebSocket = require("ws");
 
 app.get("/", (req, res) => {
 
-  res.send('njn');
+   const url = "ws://34.87.63.155:8080/feedService/productPrice";
+  const connection = new WebSocket(url);
+  connection.onmessage = (e) => {
+    res.send(e.data);
+  };
 
 
 });
