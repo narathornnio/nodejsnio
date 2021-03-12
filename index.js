@@ -4,7 +4,7 @@ let app = require('express')();
 
 let server = require('http').createServer(app);
 let io = require('socket.io')(server);
-let WebSocket = require("ws");
+let WebSocket = require("ws")(server);
 io.on('connection', (socket) => {
  
   socket.on('disconnect', function(){
