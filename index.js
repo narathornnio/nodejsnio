@@ -45,11 +45,9 @@ const WebSocket = require("ws");
 const app = express();
 
 app.get("/", (req, res) => {
-  const url = "ws://34.87.63.155:8080/feedService/productPrice";
-  const connection = new WebSocket(url);
-  connection.onmessage = (e) => {
-    res.send(e.data);
-  };
+  
+    res.send('kl;lk;l;');
+ 
 });
 
 app.listen(3000, () => {
