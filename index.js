@@ -8,13 +8,13 @@ const WebSocket = require("ws");
 const url = "ws://34.87.63.155:8080/feedService/productPrice";
 const connection = new WebSocket(url);
 
-app.get("/", (req, res) => {
+
 
     connection.onmessage = (e) => {
-    res.send(e.data);
+    console.log(e.data);
   };
 
-});
+
  
 var port = process.env.PORT || 3001;
  
