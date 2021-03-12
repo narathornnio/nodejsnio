@@ -5,33 +5,7 @@ let app = require('express')();
 let server = require('http').createServer(app);
 let io = require('socket.io')(server);
 let WebSocket = require("ws")(server);
-io.on('connection', (socket) => {
- 
-  socket.on('disconnect', function(){
-    io.emit('users-changed', {user: socket.username, event: 'left'});   
-  });
- 
-  socket.on('set-name', (name) => {
-    socket.username = name;
-    io.emit('users-changed', {user: name, event: 'joined'});    
-  });
-  
-  socket.on('send-message', (message) => {
-    io.emit('message', {
-        msg: message.text, 
-        img: message.img,
-        user: socket.username, 
-        owner_room: message.owner_room,
-        chat_partner: message.chat_partner,
-        coderoom: Number(message.owner_room)+Number(message.chat_partner),
-        coderoomgroup:message.coderoomgroup,
-        name_thai: message.name_thai,
-        img_send: message.img_send,
-        img_send_name: message.img_send_name,
-        createdAt: new Date()
-      });    
-  });
-});
+
 
 
 
@@ -39,9 +13,11 @@ app.get("/", (req, res) => {
   const url = "ws://34.87.63.155:8080/feedService/productPrice";
   const connection = new WebSocket(url);
   connection.onmessage = (e) => {
-    res.send(e.data);
+   
   };
- 
+  res.send('njn');
+
+
 });
  
 var port = process.env.PORT || 3001;
